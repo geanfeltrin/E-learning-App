@@ -16,7 +16,8 @@ export const Content = styled.View`
   border-top-left-radius: ${metrics.baseRadius}px;
   border-top-right-radius: ${metrics.baseRadius}px;
   width: ${metrics.screenWidth}px;
-  padding: ${metrics.basePadding}px;
+  padding-top: ${metrics.basePadding}px;
+  padding-bottom: ${metrics.basePadding}px;
   justify-content: flex-start;
   align-items: center;
 `;

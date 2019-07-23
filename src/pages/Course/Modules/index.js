@@ -21,7 +21,16 @@ export default function Modules({ navigation }) {
         height="medium"
         titleSize="extraLarge"
       />
-      <ScrollView contentContainerStyle={{ flex: 1, paddingVertical: 8 }}>
+
+      <ScrollView
+        contentContainerStyle={{ flex: 1, paddingVertical: 10 }}
+        contentInsetAdjustmentBehavior="automatic"
+        style={{
+          backgroundColor: '#F2F4F7',
+          borderTopLeftRadius: 8,
+          borderTopRightRadius: 8,
+        }}
+      >
         <Content>
           <CardCollapsed title="Module 01" status="em andamento">
             <Card

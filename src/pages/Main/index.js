@@ -8,7 +8,7 @@ import CardsCourses from '~/components/CardsCourses';
 
 export default function Main({ navigation }) {
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: '#F2F4F7' }}>
       <Container>
         <Header title="Meus Cursos" titleSize="extraLarge" />
 

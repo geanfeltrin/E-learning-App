@@ -28,19 +28,32 @@ export default function Lessons() {
           sapien at rhoncus molestie.
         </SubTitle>
       </TitleContent>
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: '#F2F4F7' }}>
         <ContainerList>
           <TitleList>Rota de Aprendizagem</TitleList>
+          <Card
+            firtIconName="play-circle"
+            text="Aula 01"
+            time=""
+            secondColorIcon="#ACB5BD"
+            description=""
+          />
 
-          <Card iconName="file-text" lesson="Material Didático" time="DOCX" />
+          <Card
+            firtIconName="file-text"
+            text="Material Didático"
+            time="DOCX"
+            description=""
+          />
           <Card
             firtIconName="play"
             firstColorIcon="#F03D3E"
-            lesson="Game"
+            text="Game"
             time=""
             secondColorIcon="#ACB5BD"
+            description=""
           />
-          <Card />
+          <Card firtIconName="help-circle" text="Quiz" description="" />
         </ContainerList>
       </ScrollView>
     </Container>

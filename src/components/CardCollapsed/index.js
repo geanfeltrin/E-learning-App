@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SafeAreaView, ScrollView } from 'react-native';
 
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/Feather';
@@ -25,7 +26,11 @@ export default function CardCollapsed({ title, status, children }) {
           />
         </ContentIcon>
       </Content>
-      {collapsed && <>{children}</>}
+      <SafeAreaView>
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+          {collapsed && <>{children}</>}
+        </ScrollView>
+      </SafeAreaView>
     </Container>
   );
 }

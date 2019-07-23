@@ -13,7 +13,8 @@ export const Container = styled.View`
 export const Content = styled.View`
   flex: 2;
   background-color: ${colors.background};
-  border-radius: ${metrics.baseRadius}px;
+  border-top-left-radius: ${metrics.baseRadius}px;
+  border-top-right-radius: ${metrics.baseRadius}px;
   width: ${metrics.screenWidth}px;
   padding: ${metrics.basePadding}px;
   justify-content: flex-start;
