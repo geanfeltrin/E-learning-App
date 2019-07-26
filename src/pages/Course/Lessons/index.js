@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+
+import VideoPlayer from '~/components/VideoPlayer';
 
 import PropTypes from 'prop-types';
 
@@ -18,9 +20,26 @@ import {
 import Card from '~/components/Card';
 
 export default function Lessons() {
+  const [video, setVideo] = useState('JEKfVdOM2Ak');
+  const [loadVideo, setLoadVideo] = useState(true);
+
+  function changeVideo() {
+    setLoadVideo(false);
+    setVideo('xjcI9U7jVkU');
+    setTimeout(() => {
+      setLoadVideo(true);
+    }, 300);
+  }
   return (
     <Container>
-      <Image source={Img} resized="cover" />
+      {loadVideo ? (
+        <VideoPlayer videoId={video} />
+      ) : (
+        <View>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      )}
+
       <TitleContent>
         <Title>Aula 01</Title>
         <SubTitle>
@@ -37,6 +56,7 @@ export default function Lessons() {
             time=""
             secondColorIcon="#ACB5BD"
             description=""
+            onPress={changeVideo}
           />
 
           <Card
