@@ -1,4 +1,5 @@
 import React from 'react';
+import './fixtimerbug';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import '~/config/ReactotronConfig';

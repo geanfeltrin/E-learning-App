@@ -1,9 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { View } from 'react-native';
 
+import { View, Alert } from 'react-native';
 import YouTubePlayer from 'react-native-youtube-sdk';
-
-// import { Container } from './styles';
 
 function randomNum(min, max) {
   let n = [];
@@ -15,8 +13,11 @@ function randomNum(min, max) {
 
 export default function VideoPlayer({ videoId }) {
   const youTubePlayer = useRef('');
+  const idInterval = useRef('');
 
   const [currentCheck, setCurrentCheck] = useState(false);
+  const [check, setCheck] = useState(0);
+
   const [stateVideo, setStateVideo] = useState('');
   const [durationVideo, setDurationVideo] = useState('');
   const [randomTime, setRandomTime] = useState([]);
@@ -24,25 +25,56 @@ export default function VideoPlayer({ videoId }) {
   async function getDuration() {
     const duration = await youTubePlayer.current.getVideoDuration();
     setDurationVideo(duration);
-    const random = randomNum(1, 10);
-    const v = Array.from(random).sort((a, b) => a - b);
 
-    setRandomTime(v);
+    const random = randomNum(100000, duration * 1000);
+    const value = Array.from(random).sort((a, b) => a - b);
+
+    setRandomTime(value);
   }
 
   const getTime = useCallback(async () => {
     const currentTime = await youTubePlayer.current.getCurrentTime();
+    const v = String(currentTime);
+    return v;
+  }, []);
 
-    if (String(currentTime) === randomTime[0]) {
-      console.log()
-    }
-  }
+  const timeAlert = useCallback(() => {
+    console.log(randomTime);
+    idInterval.current = setTimeout(() => {
+      youTubePlayer.current.pause();
+      Alert.alert(
+        'Alert Title',
+        'My Alert Msg',
+        [
+          {
+            text: 'Ask me later',
+            onPress: () => console.log('Ask me later pressed'),
+          },
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
+        ],
+        { cancelable: false }
+      );
+      setCheck(check + 1);
+    }, randomTime[check]);
+  }, [randomTime, idInterval, check]);
 
-
+  const timeAlertStop = useCallback(() => {
+    clearTimeout(idInterval.current);
+  }, []);
 
   useEffect(() => {
-
-  }, []);
+    if (stateVideo === 'PLAYING' && check <= 2) {
+      timeAlert();
+    }
+    if (stateVideo === 'PAUSED') {
+      timeAlertStop();
+    }
+  }, [stateVideo, timeAlert, timeAlertStop]);
 
   return (
     <View>
@@ -61,9 +93,9 @@ export default function VideoPlayer({ videoId }) {
         onChangeState={e => {
           if (currentCheck === false && e.state === 'PLAYING') {
             getDuration();
-            console.log('foi');
             setCurrentCheck(true);
           }
+
           setStateVideo(e.state);
         }}
         onChangeFullscreen={e =>
