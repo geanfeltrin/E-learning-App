@@ -56,10 +56,10 @@ const Routes = (isSigned = false) =>
             Main: {
               screen: createStackNavigator(
                 {
-                  Lessons,
                   Main,
                   Blocos,
                   Modules,
+                  Lessons,
                 },
                 {
                   defaultNavigationOptions: {
