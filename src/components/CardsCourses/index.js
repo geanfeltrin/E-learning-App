@@ -47,7 +47,7 @@ export default function CardsCourses({
           </ContentIcon>
         )}
       </Content>
-      {type === 'image' && (
+      {/* {type === 'image' && (
         <Bar
           progress={0.3}
           borderRadius={0}
@@ -58,7 +58,7 @@ export default function CardsCourses({
           height={3}
           style={{ marginBottom: 8, width: '90%', marginHorizontal: 16 }}
         />
-      )}
+      )} */}
     </Container>
   );
 }

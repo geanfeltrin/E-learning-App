@@ -2,8 +2,8 @@ export default {
   background: '#F2F4F7',
   backgroundDarker: '#212429',
 
-  primary: '#063057',
-  secondary: '#0B5AA3',
+  primary: '#0B5AA3',
+  secondary: '#063057',
   tertiary: '#3AA96C',
 
   success: '#37B24D',

@@ -42,7 +42,7 @@ Header.propTypes = {
 Header.defaultProps = {
   description: '',
   title: null,
-  backgroundColor: '#063057',
+  backgroundColor: '#0B5AA3',
   titleSize: 'large',
   height: 'small',
   barStyle: 'light-content',

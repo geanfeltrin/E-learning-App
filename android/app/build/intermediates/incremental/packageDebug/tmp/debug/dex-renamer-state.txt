@@ -1,4 +1,4 @@
-#Tue Aug 06 10:14:13 BRT 2019
+#Tue Aug 13 09:53:39 BRT 2019
 base.0=C\:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

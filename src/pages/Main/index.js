@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
-import { ActivityIndicator, ScrollView } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { ActivityIndicator, ScrollView, Animated } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { Container, Content } from './styles';
 import Header from '~/components/Header';
+import Header2 from '~/components/Header2';
 
 import CardsCourses from '~/components/CardsCourses';
 
@@ -14,6 +15,7 @@ export default function Main({ navigation }) {
   const profile = useSelector(state => state.user.profile);
   const courses = useSelector(state => state.courses.data);
   const loading = useSelector(state => state.courses.loading);
+  const scale = useRef(new Animated.Value(0)).current;
   if (courses) {
     console.log(courses.items);
   }
@@ -25,10 +27,19 @@ export default function Main({ navigation }) {
   }, [dispatch, profile.session]);
 
   return (
-    <ScrollView style={{ backgroundColor: '#F2F4F7' }}>
-      <Container>
-        <Header title="Meus Cursos" titleSize="extraLarge" />
-
+    <Container>
+      {/* <Header title="Meus Cursos" titleSize="extraLarge" /> */}
+      <Header2 title="Meus Cursos" />
+      <ScrollView
+        style={{ backgroundColor: '#F2F4F7' }}
+        onScroll={Animated.event([
+          {
+            nativeEvent: {
+              contentOffset: { y: scale },
+            },
+          },
+        ])}
+      >
         {loading ? (
           <ActivityIndicator />
         ) : (
@@ -56,8 +67,8 @@ export default function Main({ navigation }) {
               ))}
           </Content>
         )}
-      </Container>
-    </ScrollView>
+      </ScrollView>
+    </Container>
   );
 }
 

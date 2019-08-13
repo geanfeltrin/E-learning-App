@@ -2,10 +2,10 @@ import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Platform, ActivityIndicator } from 'react-native';
+import PropTypes from 'prop-types';
 import { signInRequest } from '~/store/Modules/auth/actions';
 
 import LogoSvg from '~/assets/ComponetsSvg/LogoSvg';
-
 import {
   Container,
   Content,
@@ -23,7 +23,7 @@ import {
   AccountButtonTxt,
 } from './styles';
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const passwordInput = useRef('');
@@ -80,7 +80,11 @@ export default function SignIn() {
           <ContentText>
             <AccountText>Não Tem Conta?</AccountText>
 
-            <AccountButton onPress={() => {}}>
+            <AccountButton
+              onPress={() => {
+                navigation.navigate('ForgotterPassword');
+              }}
+            >
               <AccountButtonTxt> CLIQUE AQUI!</AccountButtonTxt>
             </AccountButton>
           </ContentText>
@@ -89,3 +93,9 @@ export default function SignIn() {
     </Container>
   );
 }
+
+SignIn.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};

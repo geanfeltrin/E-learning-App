@@ -1,4 +1,5 @@
 import React from 'react';
+import './base64Polyfill';
 import './fixtimerbug';
 import { PersistGate } from 'redux-persist/integration/react';
 
