@@ -1,4 +1,5 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
+import { Alert } from 'react-native';
 import api from '~/services/api';
 
 import { signInSuccess, signFailure } from './actions';
@@ -14,7 +15,11 @@ export function* signIn({ payload }) {
 
     yield put(signInSuccess(response.data.content));
   } catch (error) {
-    yield put(signFailure());
+    Alert.alert(
+      'Falha na autentificação',
+      'Houve um erro no login, verifique seus dados'
+    );
+    yield put(signFailure(error));
   }
 }
 
