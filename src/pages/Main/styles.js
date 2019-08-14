@@ -19,3 +19,7 @@ export const Content = styled.View`
   justify-content: flex-start;
   align-items: center;
 `;
+
+export const List = styled.FlatList.attrs({
+  contentContainerStyle: { padding: 16 },
+})``;

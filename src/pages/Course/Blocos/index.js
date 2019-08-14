@@ -1,47 +1,166 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import Icon from 'react-native-vector-icons/Feather';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Animated, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
-import Header from '~/components/Header';
+import Header from '~/components/Header2';
 import Card from '~/components/CardsCourses';
 
 import { Container, Content } from './styles';
 
 export default function Blocos({ navigation }) {
+  const scale = useRef(new Animated.Value(0)).current;
   return (
     <Container>
-      <Header
-        title="Técnico em Imobilizações Ortopédicas"
-        height="max"
-        titleSize="large"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies sapien at rhoncus molestie. Curabitur commodo magna vel volutpat viverra. Donec ac velit id nulla hendrerit facilisis. Proin sit amet elit vitae ex fermentum consectetur. Cras viverra velit ipsum, ut imperdiet est gravida sed."
-      />
-      <Content>
-        <Card
-          title="Bloco 01"
-          textColor="black"
-          subTitle="Nome do Bloco"
-          nameIcon="check"
-          colorIcon="#37B24D"
-          border="success"
-          onPress={() => {
-            navigation.navigate('Modules');
-          }}
-        />
-        <Card
-          title="Bloco 02"
-          textColor="black"
-          subTitle="Nome do Bloco"
-          nameIcon="lock"
-          colorIcon="#ACB5BD"
-          border="none"
-          onPress={() => {
-            navigation.navigate('Modules');
-          }}
-        />
-      </Content>
+      <Header title={navigation.getParam('courseName')} scale={scale} small />
+
+      <ScrollView
+        style={{ backgroundColor: '#F2F4F7' }}
+        scrollEventThrottle={20}
+        onScroll={Animated.event([
+          {
+            nativeEvent: {
+              contentOffset: { y: scale },
+            },
+          },
+        ])}
+      >
+        <Content>
+          <Card
+            title="Bloco 01"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="check"
+            colorIcon="#37B24D"
+            border="success"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 02"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="lock"
+            colorIcon="#ACB5BD"
+            border="none"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 01"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="check"
+            colorIcon="#37B24D"
+            border="success"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 02"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="lock"
+            colorIcon="#ACB5BD"
+            border="none"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 01"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="check"
+            colorIcon="#37B24D"
+            border="success"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 02"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="lock"
+            colorIcon="#ACB5BD"
+            border="none"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 02"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="lock"
+            colorIcon="#ACB5BD"
+            border="none"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 01"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="check"
+            colorIcon="#37B24D"
+            border="success"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 02"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="lock"
+            colorIcon="#ACB5BD"
+            border="none"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 02"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="lock"
+            colorIcon="#ACB5BD"
+            border="none"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 01"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="check"
+            colorIcon="#37B24D"
+            border="success"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+          <Card
+            title="Bloco 02"
+            textColor="black"
+            subTitle="Nome do Bloco"
+            nameIcon="lock"
+            colorIcon="#ACB5BD"
+            border="none"
+            onPress={() => {
+              navigation.navigate('Modules');
+            }}
+          />
+        </Content>
+      </ScrollView>
     </Container>
   );
 }
@@ -61,5 +180,6 @@ Blocos.navigationOptions = ({ navigation }) => ({
 Blocos.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
+    getParam: PropTypes.func.isRequired,
   }).isRequired,
 };
