@@ -1,16 +1,33 @@
-import React, { useRef } from 'react';
-
+import React, { useRef, useEffect, useState } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import { TouchableOpacity, Animated, ScrollView } from 'react-native';
+import {
+  TouchableOpacity,
+  Animated,
+  ScrollView,
+  ActivityIndicator,
+} from 'react-native';
 import PropTypes from 'prop-types';
+import api from '~/services/api';
 
 import Header from '~/components/Header2';
-import Card from '~/components/CardsCourses';
+import CardBlock from '~/components/Cards/BlockCard';
 
-import { Container, Content } from './styles';
+import { Container, Content, List } from './styles';
 
 export default function Blocos({ navigation }) {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const scale = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    async function loadBlocks(hash) {
+      const response = await api.get(`/ava/course/currentBlock?enroll=${hash}`);
+      setData([response.data.content.items]);
+      setLoading(false);
+    }
+    loadBlocks(navigation.getParam('hash'));
+  }, [navigation]);
+
   return (
     <Container>
       <Header title={navigation.getParam('courseName')} scale={scale} small />
@@ -26,140 +43,21 @@ export default function Blocos({ navigation }) {
           },
         ])}
       >
-        <Content>
-          <Card
-            title="Bloco 01"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="check"
-            colorIcon="#37B24D"
-            border="success"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
+        {loading ? (
+          <ActivityIndicator />
+        ) : (
+          <List
+            data={data}
+            keyExtractor={item => String(item)}
+            renderItem={({ item }) => (
+              <CardBlock
+                data={item}
+                hash={navigation.getParam('hash')}
+                navigation={navigation}
+              />
+            )}
           />
-          <Card
-            title="Bloco 02"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="lock"
-            colorIcon="#ACB5BD"
-            border="none"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 01"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="check"
-            colorIcon="#37B24D"
-            border="success"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 02"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="lock"
-            colorIcon="#ACB5BD"
-            border="none"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 01"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="check"
-            colorIcon="#37B24D"
-            border="success"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 02"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="lock"
-            colorIcon="#ACB5BD"
-            border="none"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 02"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="lock"
-            colorIcon="#ACB5BD"
-            border="none"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 01"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="check"
-            colorIcon="#37B24D"
-            border="success"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 02"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="lock"
-            colorIcon="#ACB5BD"
-            border="none"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 02"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="lock"
-            colorIcon="#ACB5BD"
-            border="none"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 01"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="check"
-            colorIcon="#37B24D"
-            border="success"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-          <Card
-            title="Bloco 02"
-            textColor="black"
-            subTitle="Nome do Bloco"
-            nameIcon="lock"
-            colorIcon="#ACB5BD"
-            border="none"
-            onPress={() => {
-              navigation.navigate('Modules');
-            }}
-          />
-        </Content>
+        )}
       </ScrollView>
     </Container>
   );

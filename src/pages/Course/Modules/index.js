@@ -1,35 +1,55 @@
-import React from 'react';
-import { ScrollView, TouchableOpacity } from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
+import { ScrollView, TouchableOpacity, Animated } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Feather';
 
 import PropTypes from 'prop-types';
-import Header from '~/components/Header';
+import Header from '~/components/Header2';
 
 import CardCollapsed from '~/components/CardCollapsed';
+import api from '~/services/api';
 
 import Card from '~/components/Card';
 
 import { Container, Content } from './styles';
 
 export default function Modules({ navigation }) {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const scale = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    async function loadBlocks(hash, id) {
+      const response = await api.get(
+        `/ava/course/subjectLessons?enroll=${hash}&subjectId=${id}`
+      );
+
+      setData([response.data.content.items]);
+      setLoading(false);
+    }
+    loadBlocks(navigation.getParam('hash'), navigation.getParam('id'));
+  }, [navigation]);
   return (
     <Container>
       <Header
-        title="Bloco 1"
-        description="Saúde da mulher"
-        height="medium"
-        titleSize="extraLarge"
+        title={`Módulo ${navigation.getParam('sequence')}`}
+        scale={scale}
       />
 
       <ScrollView
-        contentContainerStyle={{ flex: 1, paddingVertical: 10 }}
-        contentInsetAdjustmentBehavior="automatic"
         style={{
           backgroundColor: '#F2F4F7',
           borderTopLeftRadius: 8,
           borderTopRightRadius: 8,
         }}
+        scrollEventThrottle={20}
+        onScroll={Animated.event([
+          {
+            nativeEvent: {
+              contentOffset: { y: scale },
+            },
+          },
+        ])}
       >
         <Content>
           <CardCollapsed title="Module 01" status="em andamento">

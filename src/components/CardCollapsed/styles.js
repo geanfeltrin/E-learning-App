@@ -12,6 +12,7 @@ export const Container = styled.View`
   elevation: ${Platform.OS === 'android' ? 3 : 'none'};
   margin-bottom: ${metrics.baseMargin};
   height: auto;
+  border-radius: ${metrics.baseRadius}px;
 `;
 
 export const Content = styled.TouchableOpacity`
@@ -39,38 +40,38 @@ export const ContentIcon = styled.View`
   align-items: center;
 `;
 
-export const ContentList = styled.TouchableOpacity`
-  justify-content: space-between;
-  align-items: stretch;
-  flex-direction: row;
-  padding: ${metrics.basePadding}px;
-  margin-left: ${metrics.baseMargin}px;
-  margin-right: ${metrics.baseMargin}px;
-  margin-top: ${metrics.baseMargin * 0.5}px;
-  margin-bottom: ${metrics.baseMargin * 0.5}px;
-  background: ${colors.white};
-  height: auto;
-  flex: 1;
-`;
+// export const ContentList = styled.TouchableOpacity`
+//   justify-content: space-between;
+//   align-items: stretch;
+//   flex-direction: row;
+//   padding: ${metrics.basePadding}px;
+//   margin-left: ${metrics.baseMargin}px;
+//   margin-right: ${metrics.baseMargin}px;
+//   margin-top: ${metrics.baseMargin * 0.5}px;
+//   margin-bottom: ${metrics.baseMargin * 0.5}px;
+//   background: ${colors.white};
+//   height: auto;
+//   flex: 1;
+// `;
 
-export const ContentText = styled.View`
-  align-items: center;
-  flex-direction: row;
-  flex: 1;
-`;
+// export const ContentText = styled.View`
+//   align-items: center;
+//   flex-direction: row;
+//   flex: 1;
+// `;
 
-export const Textlesson = styled(typography.Small)`
-  color: ${colors.dark};
-  padding-left: 10px;
-`;
+// export const Textlesson = styled(typography.Small)`
+//   color: ${colors.dark};
+//   padding-left: 10px;
+// `;
 
-export const ContentTime = styled.View`
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-`;
+// export const ContentTime = styled.View`
+//   align-items: center;
+//   flex-direction: row;
+//   justify-content: space-between;
+// `;
 
-export const TextTime = styled(typography.Small)`
-  color: ${colors.lighter};
-  padding-right: 10px;
-`;
+// export const TextTime = styled(typography.Small)`
+//   color: ${colors.lighter};
+//   padding-right: 10px;
+// `;

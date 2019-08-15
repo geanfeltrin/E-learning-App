@@ -13,11 +13,10 @@ export const Container = styled.View`
 export const Content = styled.View`
   flex: 1;
   background-color: ${colors.background};
-  border-top-left-radius: ${metrics.baseRadius}px;
-  border-top-right-radius: ${metrics.baseRadius}px;
   width: ${metrics.screenWidth}px;
   padding-top: ${metrics.basePadding}px;
   padding-bottom: ${metrics.basePadding}px;
   justify-content: flex-start;
   align-items: center;
+  padding: 16px;
 `;

@@ -1,7 +1,7 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
 import api from '~/services/api';
 
-import { getCoursesRequest, getCoursesSuccess } from './actions';
+import { getCoursesSuccess } from './actions';
 
 export function* getCourses({ payload }) {
   try {
