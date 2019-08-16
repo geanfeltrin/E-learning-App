@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-import { colors, metrics } from '~/styles';
+import { colors, metrics, typography } from '~/styles';
 
 export const Container = styled.View`
   flex: 1;
@@ -14,9 +14,22 @@ export const Content = styled.View`
   flex: 1;
   background-color: ${colors.background};
   width: ${metrics.screenWidth}px;
-  padding-top: ${metrics.basePadding}px;
   padding-bottom: ${metrics.basePadding}px;
   justify-content: flex-start;
-  align-items: center;
-  padding: 16px;
+  align-items: flex-start;
 `;
+
+export const Wrapper = styled.View`
+  flex: 1;
+  width: 100%;
+  background-color: ${colors.white};
+`;
+
+export const Title = styled(typography.MediumTitle)`
+  color: ${colors.dark};
+  margin: ${metrics.baseMargin}px;
+`;
+
+export const SectionList = styled.FlatList.attrs({
+  // contentContainerStyle: { padding: 8 },
+})``;

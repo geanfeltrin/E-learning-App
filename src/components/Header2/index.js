@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import { Animated, StyleSheet, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import { colors, metrics } from '~/styles';
 
@@ -36,70 +36,73 @@ export default function Header2({ title, scale, small }) {
     display: 'none',
   };
   return (
-    <Animated.View
-      style={[
-        styles.header,
-        {
-          height: scale.interpolate({
-            inputRange: [0, 140],
-            outputRange: [129, 56],
-            extrapolate: 'clamp',
-          }),
-        },
-      ]}
-    >
-      <Animated.Text
-        numberOfLines={scale.interpolate({
-          inputRange: [30, 140],
-          outputRange: [3, 1],
-          extrapolate: 'clamp',
-        })}
+    <>
+      <StatusBar backgroundColor={colors.primary} barStyle="light-content" />
+      <Animated.View
         style={[
-          styles.headerTitle,
+          styles.header,
           {
-            fontSize: scale.interpolate({
-              inputRange: [120, 140],
-              outputRange: [28, 21],
-              extrapolate: 'clamp',
-            }),
-            paddingBottom: scale.interpolate({
-              inputRange: [120, 140],
-              outputRange: [16, small ? 18 : 14],
-              extrapolate: 'clamp',
-            }),
-            paddingLeft: scale.interpolate({
-              inputRange: [80, 140],
-              outputRange: [0, 50],
-              extrapolate: 'clamp',
-            }),
-            fontWeight: scale.interpolate({
-              inputRange: [120, 140],
-              outputRange: [small ? '600' : '700', small ? '600' : '400'],
+            height: scale.interpolate({
+              inputRange: [0, 140],
+              outputRange: [129, 56],
               extrapolate: 'clamp',
             }),
           },
-          small && styleT,
         ]}
       >
-        {title}
-      </Animated.Text>
+        <Animated.Text
+          numberOfLines={scale.interpolate({
+            inputRange: [30, 140],
+            outputRange: [3, 1],
+            extrapolate: 'clamp',
+          })}
+          style={[
+            styles.headerTitle,
+            {
+              fontSize: scale.interpolate({
+                inputRange: [120, 140],
+                outputRange: [28, 21],
+                extrapolate: 'clamp',
+              }),
+              paddingBottom: scale.interpolate({
+                inputRange: [120, 140],
+                outputRange: [16, small ? 18 : 14],
+                extrapolate: 'clamp',
+              }),
+              paddingLeft: scale.interpolate({
+                inputRange: [80, 140],
+                outputRange: [0, 50],
+                extrapolate: 'clamp',
+              }),
+              fontWeight: scale.interpolate({
+                inputRange: [120, 140],
+                outputRange: [small ? '600' : '700', small ? '600' : '400'],
+                extrapolate: 'clamp',
+              }),
+            },
+            small && styleT,
+          ]}
+        >
+          {title}
+        </Animated.Text>
 
-      <Animated.Image
-        source={Teacher}
-        style={[
-          styles.headerImage,
-          {
-            opacity: scale.interpolate({
-              inputRange: [0, 140],
-              outputRange: [1, 0],
-              extrapolate: 'clamp',
-            }),
-          },
-          small && styleI,
-        ]}
-        resizeMethod="resize"
-      />
-    </Animated.View>
+        <Animated.Image
+          source={Teacher}
+          style={[
+            styles.headerImage,
+            {
+              opacity: scale.interpolate({
+                inputRange: [0, 140],
+                outputRange: [1, 0],
+                extrapolate: 'clamp',
+              }),
+            },
+            small && styleI,
+          ]}
+          resizeMethod="resize"
+        />
+      </Animated.View>
+    </>
   );
 }
 

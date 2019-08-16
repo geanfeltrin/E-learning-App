@@ -16,7 +16,7 @@ export default function VideoPlayer({ videoId }) {
   const idInterval = useRef('');
 
   const [currentCheck, setCurrentCheck] = useState(false);
-  const [check, setCheck] = useState(0);
+  const [check, setCheck] = useState(200);
 
   const [stateVideo, setStateVideo] = useState('');
   const [durationVideo, setDurationVideo] = useState('');

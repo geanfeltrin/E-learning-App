@@ -17,6 +17,7 @@ export const Container = styled.TouchableOpacity`
 export const Title = styled(typography.Medium)`
   color: ${colors.black};
   margin-left: ${metrics.baseMargin * 0.75}px;
+  flex: 1;
 `;
 
 export const ContentIcon = styled.View`

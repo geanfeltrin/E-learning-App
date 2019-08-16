@@ -13,7 +13,7 @@ import {
   SectionList,
 } from './styles';
 
-import List from '~/components/Cards/List';
+import BlockList from '~/components/Lists/BlockList';
 
 export default function BlockCard({ data, hash, navigation }) {
   const [collapsed, setCollapsed] = useState(false);
@@ -51,7 +51,7 @@ export default function BlockCard({ data, hash, navigation }) {
                 data={data.currentBlockSubjects}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item }) => (
-                  <List data={item} hash={hash} navigation={navigation} />
+                  <BlockList data={item} hash={hash} navigation={navigation} />
                 )}
               />
             </View>
@@ -68,5 +68,6 @@ BlockCard.propTypes = {
     currentBlockName: PropTypes.string,
   }).isRequired,
 
+  navigation: PropTypes.shape({}).isRequired,
   hash: PropTypes.string.isRequired,
 };

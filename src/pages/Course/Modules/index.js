@@ -6,15 +6,14 @@ import Icon from 'react-native-vector-icons/Feather';
 import PropTypes from 'prop-types';
 import Header from '~/components/Header2';
 
-import CardCollapsed from '~/components/CardCollapsed';
 import api from '~/services/api';
+import ModuleList from '~/components/Lists/ModuleList';
 
-import Card from '~/components/Card';
-
-import { Container, Content } from './styles';
+import { Container, Content, Title, SectionList, Wrapper } from './styles';
 
 export default function Modules({ navigation }) {
   const [data, setData] = useState([]);
+  const [numberModule, setNumberModule] = useState();
   const [loading, setLoading] = useState(true);
   const scale = useRef(new Animated.Value(0)).current;
 
@@ -28,11 +27,24 @@ export default function Modules({ navigation }) {
       setLoading(false);
     }
     loadBlocks(navigation.getParam('hash'), navigation.getParam('id'));
+    setNumberModule(navigation.getParam('sequence'));
   }, [navigation]);
+
+  const d = [
+    { id: '1a', title: 'Aula 01' },
+    { id: '2b', title: 'Aula 02' },
+    { id: '3C', title: 'Aula 03' },
+    { id: '4d', title: 'Aula 04' },
+    { id: '5f', title: 'Aula 05' },
+  ];
   return (
     <Container>
       <Header
-        title={`Módulo ${navigation.getParam('sequence')}`}
+        title={
+          numberModule <= 9
+            ? `Módulo 0${numberModule}`
+            : `Módulo ${numberModule}`
+        }
         scale={scale}
       />
 
@@ -52,94 +64,18 @@ export default function Modules({ navigation }) {
         ])}
       >
         <Content>
-          <CardCollapsed title="Module 01" status="em andamento">
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-          </CardCollapsed>
-          <CardCollapsed title="Module 01" status="em andamento">
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-            <Card
-              firtIconName="play-circle"
-              onPress={() => {
-                navigation.navigate('Lessons');
-              }}
-            />
-          </CardCollapsed>
+          <Title>{`${navigation.getParam('moduleName')}`}</Title>
+          {!loading && (
+            <Wrapper>
+              <SectionList
+                data={d}
+                extractorKey={item => String(item.id)}
+                renderItem={({ item }) => (
+                  <ModuleList data={item} navigation={navigation} />
+                )}
+              />
+            </Wrapper>
+          )}
         </Content>
       </ScrollView>
     </Container>
@@ -161,5 +97,6 @@ Modules.navigationOptions = ({ navigation }) => ({
 Modules.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired,
+    getParam: PropTypes.func.isRequired,
   }).isRequired,
 };

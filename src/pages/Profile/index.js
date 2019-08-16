@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { signFailure } from '~/store/Modules/auth/actions';
 import Header from '~/components/Header';
 
 import avatar from '~/assets/Avatar.png';
@@ -17,6 +18,10 @@ import {
 } from './styles';
 
 export default function Profile({ navigation }) {
+  const dispatch = useDispatch();
+  function logout() {
+    dispatch(signFailure());
+  }
   return (
     <Container>
       <Header height="medium" />
@@ -31,7 +36,7 @@ export default function Profile({ navigation }) {
           onPress={() => navigation.navigate('ProfileEdit')}
         />
         <ButtonContainer>
-          <LeaveButton>
+          <LeaveButton onPress={logout}>
             <ButtonText>Sair</ButtonText>
           </LeaveButton>
         </ButtonContainer>
