@@ -889,6 +889,7 @@ layout ayp_menu_item
 layout ayp_player_menu
 layout dev_loading_view
 layout fps_view
+layout list_item
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1169,6 +1170,7 @@ style CalendarDatePickerDialog
 style CalendarDatePickerStyle
 style ClockTimePickerDialog
 style ClockTimePickerStyle
+style DefaultExplainingPermissionsTheme
 style DialogAnimationFade
 style DialogAnimationSlide
 style Platform_AppCompat
@@ -1419,4 +1421,5 @@ styleable ViewBackgroundHelper android_background backgroundTint backgroundTintM
 styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable YouTubePlayerSeekBar color fontSize
 styleable YouTubePlayerView autoPlay enableAutomaticInitialization enableLiveVideoUi handleNetworkEvents showFullScreenButton showSeekBar showVideoCurrentTime showVideoDuration showYouTubeButton useWebUi videoId
+xml provider_paths
 xml rn_dev_preferences

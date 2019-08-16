@@ -804,6 +804,10 @@
         "source": "C:\\Users\\gean\\.gradle\\caches\\transforms-2\\files-2.1\\3470a8d59542b6f16021cf7a939603b2\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\node_modules\\react-native-image-picker\\android\\build\\intermediates\\packaged_res\\debug\\layout\\list_item.xml"
+    },
+    {
         "merged": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_ayp_ic_play_36dp.png.flat",
         "source": "C:\\Users\\gean\\.gradle\\caches\\transforms-2\\files-2.1\\36d9cc6095f5a93170a66f9d7d7c7d0c\\res\\drawable-xxxhdpi-v4\\ayp_ic_play_36dp.png"
     },
@@ -870,6 +874,10 @@
     {
         "merged": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\gean\\.gradle\\caches\\transforms-2\\files-2.1\\92bb39e600fbeae0e6d362e67eee1818\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
+        "source": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\node_modules\\react-native-image-picker\\android\\build\\intermediates\\packaged_res\\debug\\xml\\provider_paths.xml"
     },
     {
         "merged": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",

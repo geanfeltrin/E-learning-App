@@ -17,6 +17,8 @@ import com.appresidenciav2.R;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+// react-native-image-picker
+import com.imagepicker.ImagePickerPackage;
 // react-native-svg
 import com.horcrux.svg.SvgPackage;
 // react-native-vector-icons
@@ -58,6 +60,7 @@ public class PackageList {
       new MainReactPackage(),
       new AsyncStoragePackage(),
       new RNGestureHandlerPackage(),
+      new ImagePickerPackage(),
       new SvgPackage(),
       new VectorIconsPackage(),
       new YouTubeSdkPackage()
