@@ -47,7 +47,7 @@ const Routes = (isSigned = false) =>
   createAppContainer(
     createSwitchNavigator(
       {
-        Sign: createSwitchNavigator({
+        Sign: createStackNavigator({
           SignIn,
           ForgotterPassword,
         }),

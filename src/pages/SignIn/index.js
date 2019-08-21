@@ -69,7 +69,9 @@ export default function SignIn({ navigation }) {
             ref={passwordInput}
             onSubmitEditing={() => handleSubmit(username, password)}
           />
-          <ForgottenPassword onPress={() => {}}>
+          <ForgottenPassword
+            onPress={() => navigation.navigate('ForgotterPassword')}
+          >
             <ForgotText>ESQUECI MINHA SENHA</ForgotText>
           </ForgottenPassword>
 
@@ -77,7 +79,7 @@ export default function SignIn({ navigation }) {
             {loading ? <ActivityIndicator /> : <TextButton>Entrar</TextButton>}
           </SubmitButton>
 
-          <ContentText>
+          {/* <ContentText>
             <AccountText>Não Tem Conta?</AccountText>
 
             <AccountButton
@@ -87,12 +89,16 @@ export default function SignIn({ navigation }) {
             >
               <AccountButtonTxt> CLIQUE AQUI!</AccountButtonTxt>
             </AccountButton>
-          </ContentText>
+          </ContentText> */}
         </Form>
       </Content>
     </Container>
   );
 }
+
+SignIn.navigationOptions = {
+  header: null,
+};
 
 SignIn.propTypes = {
   navigation: PropTypes.shape({
