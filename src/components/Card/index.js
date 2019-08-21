@@ -71,7 +71,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
   text: 'Aula 01',
-  description: 'teste',
+  description: null,
   textColor: 'dark',
   textSize: 'small',
   time: null,

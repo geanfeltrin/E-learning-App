@@ -27,6 +27,7 @@ export const Avatar = styled.Image`
   height: 80px;
   border-radius: 50;
   margin-bottom: ${metrics.baseMargin * 0.5}px;
+  background-color: ${colors.white};
 `;
 
 export const AvatarText = styled(typography.Large)`

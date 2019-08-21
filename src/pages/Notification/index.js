@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
+import { Animated } from 'react-native';
+import PropTypes from 'prop-types';
 import { Container, Content } from './styles';
-import Header from '~/components/Header';
+import Header from '~/components/Header2';
 import Card from '~/components/Card';
 
+import NotificationPNG from '../../assets/Notification.png';
+
 export default function Notification({ navigation }) {
+  const scale = useRef(new Animated.Value(0)).current;
   return (
     <Container>
-      <Header height="small" title="Notificação" titleSize="extraLarge" />
+      <Header title="Notificação" scale={scale} image={NotificationPNG} />
       <Content>
         <Card
           firtIconName="bell"
@@ -28,3 +33,7 @@ export default function Notification({ navigation }) {
     </Container>
   );
 }
+
+Notification.propTypes = {
+  navigation: PropTypes.shape({}).isRequired,
+};

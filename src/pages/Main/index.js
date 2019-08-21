@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Container, List } from './styles';
 
 import Header2 from '~/components/Header2';
+import Teacher from '../../assets/Teacher.png';
 
 import { getCoursesRequest } from '~/store/Modules/courses/actions';
 import CourseCard from '~/components/Cards/CourseCard';
@@ -28,7 +29,7 @@ export default function Main({ navigation }) {
   }
   return (
     <Container>
-      <Header2 title="Meus Cursos" scale={scale} />
+      <Header2 title="Meus Cursos" scale={scale} image={Teacher} />
       <ScrollView
         style={{ backgroundColor: '#F2F4F7' }}
         scrollEventThrottle={20}

@@ -12,7 +12,7 @@ import api from '~/services/api';
 import Header from '~/components/Header2';
 import CardBlock from '~/components/Cards/BlockCard';
 
-import { Container, Content, List } from './styles';
+import { Container, List } from './styles';
 
 export default function Blocos({ navigation }) {
   const [data, setData] = useState([]);

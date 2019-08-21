@@ -3,8 +3,6 @@ import { Animated, StyleSheet, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import { colors, metrics } from '~/styles';
 
-import Teacher from '../../assets/Teacher.png';
-
 const styles = StyleSheet.create({
   header: {
     display: 'flex',
@@ -26,7 +24,7 @@ const styles = StyleSheet.create({
     height: 77,
   },
 });
-export default function Header2({ title, scale, small }) {
+export default function Header2({ title, scale, small, image }) {
   const styleT = {
     fontFamily: 'OpenSans-SemiBold',
     fontWeight: '600',
@@ -35,6 +33,7 @@ export default function Header2({ title, scale, small }) {
   const styleI = {
     display: 'none',
   };
+  console.log(image);
   return (
     <>
       <StatusBar backgroundColor={colors.primary} barStyle="light-content" />
@@ -87,7 +86,7 @@ export default function Header2({ title, scale, small }) {
         </Animated.Text>
 
         <Animated.Image
-          source={Teacher}
+          source={image}
           style={[
             styles.headerImage,
             {
@@ -107,7 +106,8 @@ export default function Header2({ title, scale, small }) {
 }
 
 Header2.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  image: PropTypes.number,
   small: PropTypes.bool,
   scale: PropTypes.shape({
     interpolate: PropTypes.func.isRequired,
@@ -116,4 +116,6 @@ Header2.propTypes = {
 
 Header2.defaultProps = {
   small: false,
+  title: null,
+  image: null,
 };
