@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { ActivityIndicator, ScrollView, Animated } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -19,8 +19,15 @@ export default function Main({ navigation }) {
 
   const dispatch = useDispatch();
 
+  const handleRefresh = useCallback(() => {
+    const { student_id: studentId, company_id: companyId } = profile.session;
+
+    dispatch(getCoursesRequest(studentId, companyId));
+  }, [dispatch, profile.session]);
+
   useEffect(() => {
     const { student_id: studentId, company_id: companyId } = profile.session;
+
     dispatch(getCoursesRequest(studentId, companyId));
   }, [dispatch, profile.session]);
 
@@ -52,6 +59,8 @@ export default function Main({ navigation }) {
                 onNav={() => handleNavigation(item.hash, item.course_name)}
               />
             )}
+            refreshing={loading}
+            onRefresh={handleRefresh}
           />
         )}
       </ScrollView>
