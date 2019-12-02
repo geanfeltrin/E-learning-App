@@ -9,9 +9,8 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
-import VideoPlayer from '~/components/VideoPlayer';
-
 import PropTypes from 'prop-types';
+// import VideoPlayer from '~/components/VideoPlayer';
 
 import Img from '~/assets/Rectangle.png';
 
@@ -39,13 +38,13 @@ export default function Lessons() {
   }
   return (
     <Container>
-      {loadVideo ? (
+      {/* {loadVideo ? (
         <VideoPlayer videoId={video} />
       ) : (
         <View>
           <ActivityIndicator size="large" color="#0000ff" />
         </View>
-      )}
+      )} */}
 
       <TitleContent>
         <Title>Aula 01</Title>

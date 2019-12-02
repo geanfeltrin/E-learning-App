@@ -4,7 +4,7 @@ import { View, Alert } from 'react-native';
 import YouTubePlayer from 'react-native-youtube-sdk';
 
 function randomNum(min, max) {
-  let n = [];
+  const n = [];
   for (let i = 0; i < 3; i++) {
     n.push(Math.floor(Math.random() * max) + min);
   }
@@ -74,7 +74,7 @@ export default function VideoPlayer({ videoId }) {
     if (stateVideo === 'PAUSED') {
       timeAlertStop();
     }
-  }, [stateVideo, timeAlert, timeAlertStop]);
+  }, [check, stateVideo, timeAlert, timeAlertStop]);
 
   return (
     <View>

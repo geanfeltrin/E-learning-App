@@ -12,9 +12,10 @@ export function* signIn({ payload }) {
     params.append('password', `${password}`);
 
     const response = yield call(api.post, '/ava/student/login', params);
-    console.log(response.data.content);
-    if (response.data.content.success) {
+    if (response.data.content.success === true) {
       yield put(signInSuccess(response.data.content));
+    } else {
+      throw new Error('error');
     }
   } catch (error) {
     Alert.alert(
