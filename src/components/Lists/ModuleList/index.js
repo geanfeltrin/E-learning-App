@@ -10,7 +10,6 @@ import {
   ContentCard,
   TextCard,
   ContentTime,
-  TextTime,
   ContentText,
 } from './styles';
 
@@ -21,21 +20,28 @@ export default function ModuleList({ data, navigation }) {
         <ContentText>
           <Icon name="play-circle" size={24} color={colors.primary} />
           <Wrapper>
-            <TextCard>{data.title}</TextCard>
+            <TextCard>{data.name}</TextCard>
           </Wrapper>
         </ContentText>
 
         <ContentTime>
-          <TextTime>50min</TextTime>
-          <Icon name="check" size={24} color={colors.lighter} />
+          <Icon
+            name="check"
+            size={24}
+            color={data.frequency_ava === 'T' ? colors.success : colors.lighter}
+          />
         </ContentTime>
       </ContentCard>
     </Container>
   );
 }
 
-ModuleList.prototype = {
+ModuleList.propTypes = {
   data: PropTypes.shape({
-    title: PropTypes.string,
+    name: PropTypes.string,
+    frequency_ava: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
   }).isRequired,
 };

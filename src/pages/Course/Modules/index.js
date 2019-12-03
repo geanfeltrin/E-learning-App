@@ -18,18 +18,12 @@ export default function Modules({ navigation }) {
   const scale = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    async function loadBlocks(hash, id) {
-      const response = await api.get(
-        `/ava/course/subjectLessons?enroll=${hash}&subjectId=${id}`
-      );
-
-      setData([response.data.content.items]);
-      setLoading(false);
-    }
-    loadBlocks(navigation.getParam('hash'), navigation.getParam('id'));
+    setData(navigation.getParam('lessons'));
+    setLoading(false);
     setNumberModule(navigation.getParam('sequence'));
   }, [navigation]);
-
+  console.log(navigation);
+  console.log(data);
   const d = [
     { id: '1a', title: 'Aula 01' },
     { id: '2b', title: 'Aula 02' },
@@ -68,7 +62,7 @@ export default function Modules({ navigation }) {
           {!loading && (
             <Wrapper>
               <SectionList
-                data={d}
+                data={data}
                 extractorKey={item => String(item.id)}
                 renderItem={({ item }) => (
                   <ModuleList data={item} navigation={navigation} />

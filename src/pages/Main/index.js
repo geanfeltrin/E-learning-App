@@ -13,6 +13,8 @@ import CourseCard from '~/components/Cards/CourseCard';
 
 export default function Main({ navigation }) {
   const profile = useSelector(state => state.user.profile);
+  const profileLoading = useSelector(state => state.user.loading);
+
   const courses = useSelector(state => state.courses.data);
   const loading = useSelector(state => state.courses.loading);
   const scale = useRef(new Animated.Value(0)).current;
@@ -20,19 +22,21 @@ export default function Main({ navigation }) {
   const dispatch = useDispatch();
 
   const handleRefresh = useCallback(() => {
-    const { student_id: studentId, company_id: companyId } = profile.session;
+    const { person_id: personId } = profile.session;
 
-    dispatch(getCoursesRequest(studentId, companyId));
+    dispatch(getCoursesRequest(personId));
   }, [dispatch, profile.session]);
 
   useEffect(() => {
-    const { student_id: studentId, company_id: companyId } = profile.session;
+    if (!profileLoading) {
+      const { person_id: personId } = profile.session;
 
-    dispatch(getCoursesRequest(studentId, companyId));
-  }, [dispatch, profile.session]);
+      dispatch(getCoursesRequest(personId));
+    }
+  }, [dispatch, profile.session, profileLoading]);
 
-  function handleNavigation(hash, courseName) {
-    navigation.navigate('Blocos', { hash, courseName });
+  function handleNavigation(enrollmentHash, courseName) {
+    navigation.navigate('Blocos', { enrollmentHash, courseName });
   }
   return (
     <Container>
@@ -56,7 +60,9 @@ export default function Main({ navigation }) {
             renderItem={({ item }) => (
               <CourseCard
                 data={item}
-                onNav={() => handleNavigation(item.hash, item.course_name)}
+                onNav={() =>
+                  handleNavigation(item.enrollment_hash, item.course_name)
+                }
               />
             )}
             refreshing={loading}

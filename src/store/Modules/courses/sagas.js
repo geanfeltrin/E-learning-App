@@ -5,10 +5,10 @@ import { getCoursesSuccess } from './actions';
 
 export function* getCourses({ payload }) {
   try {
-    const { studentId, companyId } = payload;
+    const { personId } = payload;
     const response = yield call(
       api.get,
-      `https://dev.sistemaresidencia.com.br/sre/apiN/v1/ava/student/courses?studentId=${studentId}&companyId=${companyId}`
+      `/ava/student/dashboard?personId=${personId}`
     );
     yield put(getCoursesSuccess(response.data.content));
   } catch (error) {

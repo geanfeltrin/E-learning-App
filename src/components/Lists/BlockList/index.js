@@ -6,13 +6,18 @@ import { colors } from '../../../styles';
 import { Container, Title } from './styles';
 
 export default function BlockList({ data, hash, navigation }) {
-  function handleNavigation(id, sequence, moduleName) {
-    navigation.navigate('Modules', { hash, id, sequence, moduleName });
+  function handleNavigation({ id, sequence, moduleName, lessons }) {
+    navigation.navigate('Modules', { hash, id, sequence, moduleName, lessons });
   }
   return (
     <Container
       onPress={() =>
-        handleNavigation(data.id, data.sequence, data.subject_name)
+        handleNavigation({
+          id: data.id,
+          sequence: data.sequence,
+          moduleName: data.subject_name,
+          lessons: data.lessons,
+        })
       }
     >
       <Icon name="list" size={24} color={colors.primary} />
@@ -26,6 +31,7 @@ BlockList.propTypes = {
     subject_name: PropTypes.string,
     id: PropTypes.string,
     sequence: PropTypes.string,
+    lessons: PropTypes.array,
   }).isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func,

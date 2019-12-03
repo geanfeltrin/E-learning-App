@@ -33,7 +33,7 @@ export default function BlockCard({ data, hash, navigation }) {
       <Content onPress={() => handleCollapse()}>
         <ContentTitle>
           <Title>Bloco Atual</Title>
-          <SubTitle numberOfLines={1}>{data.currentBlockName}</SubTitle>
+          <SubTitle numberOfLines={1}>{data.blockName}</SubTitle>
         </ContentTitle>
         <ContentIcon>
           <Icon
@@ -48,7 +48,7 @@ export default function BlockCard({ data, hash, navigation }) {
           {collapsed && (
             <View>
               <SectionList
-                data={data.currentBlockSubjects}
+                data={data.subjects}
                 keyExtractor={item => String(item.id)}
                 renderItem={({ item }) => (
                   <BlockList data={item} hash={hash} navigation={navigation} />
@@ -64,8 +64,8 @@ export default function BlockCard({ data, hash, navigation }) {
 
 BlockCard.propTypes = {
   data: PropTypes.shape({
-    currentBlockSubjects: PropTypes.array,
-    currentBlockName: PropTypes.string,
+    subjects: PropTypes.array,
+    blockName: PropTypes.string,
   }).isRequired,
 
   navigation: PropTypes.shape({}).isRequired,

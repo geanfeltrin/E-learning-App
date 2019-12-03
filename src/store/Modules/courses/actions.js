@@ -1,7 +1,7 @@
-export function getCoursesRequest(studentId, companyId) {
+export function getCoursesRequest(personId) {
   return {
     type: '@courses/GET_COURSES_REQUEST',
-    payload: { studentId, companyId },
+    payload: { personId },
   };
 }
 

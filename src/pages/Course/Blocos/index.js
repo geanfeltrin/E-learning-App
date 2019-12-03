@@ -5,6 +5,7 @@ import {
   Animated,
   ScrollView,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import api from '~/services/api';
@@ -20,14 +21,22 @@ export default function Blocos({ navigation }) {
   const scale = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    async function loadBlocks(hash) {
-      const response = await api.get(`/ava/course/currentBlock?enroll=${hash}`);
-      setData([response.data.content.items]);
-      setLoading(false);
+    async function loadBlocks(enrollmentHash) {
+      try {
+        const response = await api.get(
+          `/ava/course/block?enroll=${enrollmentHash}&lessons=true`
+        );
+        setData([response.data.content.items]);
+        setLoading(false);
+      } catch (error) {
+        Alert.alert(
+          'Falha ao carregar as disciplinas',
+          'Houve um erro no carregamento, verifique sua internet'
+        );
+      }
     }
-    loadBlocks(navigation.getParam('hash'));
+    loadBlocks(navigation.getParam('enrollmentHash'));
   }, [navigation]);
-
   return (
     <Container>
       <Header title={navigation.getParam('courseName')} scale={scale} small />
@@ -52,7 +61,7 @@ export default function Blocos({ navigation }) {
             renderItem={({ item }) => (
               <CardBlock
                 data={item}
-                hash={navigation.getParam('hash')}
+                hash={navigation.getParam('enrollmentHash')}
                 navigation={navigation}
               />
             )}

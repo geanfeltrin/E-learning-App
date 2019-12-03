@@ -33,7 +33,6 @@ export default function Header2({ title, scale, small, image }) {
   const styleI = {
     display: 'none',
   };
-  console.log(image);
   return (
     <>
       <StatusBar backgroundColor={colors.primary} barStyle="light-content" />

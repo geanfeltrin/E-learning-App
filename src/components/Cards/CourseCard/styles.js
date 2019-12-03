@@ -14,10 +14,15 @@ export const Container = styled.TouchableOpacity`
   margin-bottom: ${metrics.baseMargin}px;
 `;
 
+export const ImageThumbnail = styled.Image`
+  height: 68px;
+  width: 68px;
+  border-radius: 3px;
+`;
 export const Wrapper = styled.View`
   flex: 1;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   margin-left: ${metrics.baseMargin}px;
 `;
