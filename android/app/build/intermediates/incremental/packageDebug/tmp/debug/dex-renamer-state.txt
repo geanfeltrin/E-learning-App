@@ -1,4 +1,4 @@
-#Fri Aug 16 10:25:22 BRT 2019
-base.0=C\:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Aug 25 10:03:51 BRT 2020
+base.0=C\:\\Users\\Gean\\Documents\\GitHub\\App-educacao-a-distancia\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

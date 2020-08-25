@@ -1,10 +1,15 @@
 import axios from 'axios';
+import {
+  API_URL,
+  BASIC_AUTH_USERNAME,
+  BASIC_AUTH_PASSWORD,
+} from 'react-native-dotenv';
 
 const api = axios.create({
-  baseURL: 'https://dev.sistemaresidencia.com.br/sre/apiN/v1',
+  baseURL: API_URL,
   auth: {
-    username: 'dmc',
-    password: '999159389',
+    username: BASIC_AUTH_USERNAME,
+    password: BASIC_AUTH_PASSWORD,
   },
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 });

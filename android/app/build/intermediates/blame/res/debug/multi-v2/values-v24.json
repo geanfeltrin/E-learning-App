@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\gean\\Documents\\GitHub\\appResidenciaV2\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\Gean\\Documents\\GitHub\\App-educacao-a-distancia\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\gean\\.gradle\\caches\\transforms-2\\files-2.1\\3470a8d59542b6f16021cf7a939603b2\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Gean\\.gradle\\caches\\transforms-2\\files-2.1\\8caedc51b8bcc572d3a29794c11e89f3\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
