@@ -3,14 +3,14 @@
 </h4>
 
 <p align="center">
- <a href="#about">About</a> •
+ <a href="#-about">About</a> •
  <a href="#features">Features</a> •
  <a href="#-layout">Layout</a> •
- <a href="#-como-executar-o-projeto">How it works</a> •
- <a href="#tech-stack">Tech Stack</a> •
- <a href="#author">Author</a> •
- <a href="#user-content-license">License</a> •
- <a href="#user-content-versões-do-readme">Version Portuguese(BR)</a>
+ <a href="#-how-it-works">How it works</a> •
+ <a href="#-tech-stack">Tech Stack</a> •
+ <a href="#author">Authors</a> •
+ <a href="#-license">License</a> •
+ <a href="#versions-of-readme">Version Portuguese(BR)</a>
 </p>
 
 ## 💻 About
