@@ -53,7 +53,12 @@ O layout da aplicação está disponível no Figma:
 
 ### Mobile
 
-<p align="center">
+<p align="center" style="
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: aliceblue;
+">
   <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Log-In.jpg" width="200px" style="border: 1px solid black;"/>
 
   <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Esqueci-minha-senha.jpg" width="200px" style="border: 1px solid black;"/>
@@ -61,21 +66,36 @@ O layout da aplicação está disponível no Figma:
   <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Meus-cursos.jpg" width="200px" style="border: 1px solid black; vertical-align: top;"/>
 </p>
 
-<p align="center">
+<p align="center" style="
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: aliceblue;
+">
   <img alt="AppEducaçãoADistancia" title="Blocos" src="./src/assets/Blocos.jpg" width="200px" style="border: 1px solid black;">
   <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Modulos.jpg" width="200px" style="border: 1px solid black; vertical-align: top;"/>
 
   <img alt="AppEducaçãoADistancia" title="Aulas" src="./src/assets/Aula.jpg" width="200px" style="border: 1px solid black;">
 </p>
-<p align="center">
+<p align="center" style="
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: aliceblue;
+">
  <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Quiz.jpg" width="200px" style="border: 1px solid black; vertical-align: top;">
 
  <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Game.jpg" width="200px" style="border: 1px solid black; vertical-align: top;">
+
+ <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Perfil-usuario.jpg" width="200px" style="border: 1px solid black; vertical-align: top;">
 </p>
 
-<p align="center">
-<img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Perfil-usuario.jpg" width="200px" style="border: 1px solid black; vertical-align: top;">
-
+<p align="center" style="
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: aliceblue;
+">
 <img alt="AppEducaçãoADistancia" title="#AppEducaçãoADistancia" src="./src/assets/Editar-Perfil.jpg" width="200px" style="border: 1px solid black; vertical-align: top;">
 </p>
 
