@@ -1,51 +1,52 @@
 <h4 align="center">
-	📱 Aplicativo Educação a distancia
+	📱 E-Learning App
 </h4>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#about">About</a> •
+ <a href="#features">Features</a> •
  <a href="#-layout">Layout</a> •
- <a href="#-como-executar-o-projeto">Como executar</a> •
- <a href="#-tecnologias">Tecnologias</a> •
- <a href="#-contribuidores">Contribuidores</a> •
- <a href="#-autor">Autor</a> •
- <a href="#user-content--licença">Licença</a>
+ <a href="#-como-executar-o-projeto">How it works</a> •
+ <a href="#tech-stack">Tech Stack</a> •
+ <a href="#author">Author</a> •
+ <a href="#user-content-license">License</a> •
+ <a href="#user-content-versões-do-readme">Version Portuguese(BR)</a>
 </p>
 
-## 💻 Sobre o projeto
+## 💻 About
 
-📱 Esse aplicativo é uma forma das escola oferecerem todo seu potencial educacional no smartfone, com video aulas, quiz, gameficaçao e pontuação integrada.
+📱 Esse aplicativo é uma forma das escolas oferecerem todo seu potencial educacional no smartphone com videoaulas, quiz, gamificação e pontuação integrada.
 
 Esse projeto foi uma proposta de aplicativo para o atual sistema da empresa Residência Educação.
 
 A Residência Educação é uma escola técnica que atua em todo o território brasileiro, trazendo diversas soluções tecnológicas que ajudam a democratizar o acesso ao ensino profissionalizante no país.
 
-## 💡 Esse projeto é apenas um protótipo o projeto que foi para produção é um git privado 😎.
+### 💡 Esse projeto é apenas um protótipo, o projeto que foi para produção é um github privado 😎.
 
-## ⚙️ Funcionalidades
+## ⚙️ Features
 
-- [x] Tela de login
-- [x] Tela de cadastro de novos alunos
-- [x] Tela esqueci minha senha
-- [x] Tela listagem "Meus cursos"
-  - [x] Conectar com a API listando os curso do aluno
-- [x] Tela listagem do conteúdo do curso
-  - [x] Matérias
-  - [x] Módulos
-- [x] Tela sala de aula:
-  - [x] Rota de aprendizagem - Vídeo aula - Quiz - Game
-  - [x] Tela Quiz
+- [x] Login screen
+- [x] Register screen
+- [x] Forgot password screen
+- [x] My courses screen
+  - [x] Connection with API to list your courses
+- [x] Course content listing screen
+  - [x] Subjects
+  - [x] Modules
+- [x] Classroom screen:
+  - [x] Learning route - Video lesson - Quiz - Game
+  - [x] Quiz screen
   - Game
-- [x] Tela perfil do usuário
-- Bonificação por uso
+- [x] User profile screen
+  - [x] User edit profile screen
+  - Bonus for use
 - [x] Notifações
 
 ---
 
 ## 🎨 Layout
 
-O layout da aplicação está disponível no Figma:
+The application layout is available on Figma:
 
 <a href="https://www.figma.com/file/F26McY0HQdRHGQq7q7tqAxid/App-Residencia?node-id=14%3A72">
   <img alt="Made by Emanuel Barreto" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
@@ -81,44 +82,45 @@ O layout da aplicação está disponível no Figma:
 
 ---
 
-## 🚀 Como executar o projeto
+## 🚀 How it works
 
-💡 Instale a versão do nodejs menor ou igual a 12.9, versões superiores podem apresentar erro ao executar no emulador android.
+💡
+Install the nodejs version less than or equal to 12.9, higher versions may have an error when running on the android emulator.
 
-### Pré-requisitos
+### Pre-requisites
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+Before you begin, you will need to have the following tools installed on your machine:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [React-Native](https://https://reactnative.dev/)
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+In addition, it is good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/)
 
 #### 🧭 Rodando a aplicação
 
 ```bash
 
-# Clone este repositório
-$ git clone https://github.com/geanfeltrin/App-educacao-a-distancia.git
+# Clone this repository
+$ git clone https://github.com/geanfeltrin/e-learning-app.git
 
-# Acesse a pasta do projeto no seu terminal/cmd
-$ cd README-ecoleta
+# Access the project folder cmd/terminal
+$ cd e-learning-app
 
-# Instale as dependências
+# Install the dependencies
 $ yarn
 
-# Abra o emulador de sua preferência
+# Open the emulator of your choice
 
 
-# Execute a aplicação em modo de desenvolvimento
+# Run the application in development mode
 $ react-native run-android or react-native run-ios
 
-# A aplicação será aberta no emulador de sua preferência
+# The application will open in emulator of your choice
 
 ```
 
 ---
 
-## 🛠 Tecnologias
+## 🛠 Tech Stack
 
-As seguintes ferramentas foram usadas na construção do projeto:
+The following tools were used in the construction of the project:
 
 #### **Mobile** ([React-native])(https://https://reactnative.dev/)
 
@@ -129,13 +131,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Redux Saga](https://redux-saga.js.org/)**
 - **[React Native Youtube Sdk](https://github.com/up-inside/react-native-youtube-sdk)**
 
-## 🦸 Autores
+## 🦸 Authors
 
 <a href="https://github.com/geanfeltrin">
  <img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/32302438?s=460&u=16efbd85b761114e0effe20244bddd2d19f230f8&v=4" width="100px;" alt=""/>
  <br />
   <sub>
-    <b>Gean Feltrin - Developer</b>
+    <b>Gean Feltrin - Web Developer</b>
   </sub>
 </a>
  <br />
@@ -154,14 +156,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 
-## 📝 Licença
+## 📝 License
 
-Este projeto esta sobe a licença [MIT](./LICENSE).
+This project is under the license [MIT](./LICENSE).
 
-Feito com ❤️ por Gean Feltrin 👋🏽 [Entre em contato!](https://www.linkedin.com/in/geanfeltrin/)
+Made with love by Gean Feltrin 👋🏽 [Entre em contato!](https://www.linkedin.com/in/geanfeltrin/)
 
 ---
 
-## Versões do README
+## Versions of README
 
-[Português 🇧🇷](./README-PT.md) | [Inglês 🇺🇸](./README.md)
+[Portuguese 🇧🇷](./README-PT.md) | [English 🇺🇸](./README.md)
