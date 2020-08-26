@@ -15,13 +15,13 @@
 
 ## 💻 About
 
-📱 Esse aplicativo é uma forma das escolas oferecerem todo seu potencial educacional no smartphone com videoaulas, quiz, gamificação e pontuação integrada.
+📱 This application is a way for schools to offer their full educational potential on their smartphones with video lessons, quiz, gamification and integrated punctuation.
 
-Esse projeto foi uma proposta de aplicativo para o atual sistema da empresa Residência Educação.
+This project was an application proposal for the company's current system Residência Educação.
 
-A Residência Educação é uma escola técnica que atua em todo o território brasileiro, trazendo diversas soluções tecnológicas que ajudam a democratizar o acesso ao ensino profissionalizante no país.
+Residência Educação is a technical school that operates throughout the Brazilian territory, bringing several technological solutions that help to democratize access to vocational education in the country.
 
-### 💡 Esse projeto é apenas um protótipo, o projeto que foi para produção é um github privado 😎.
+### 💡 This project is just a prototype, the project that went into production is a private github. 😎
 
 ## ⚙️ Features
 
